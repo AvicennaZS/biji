@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <style>
+      /* Menetapkan gaya untuk video latar belakang */
+      .bg-video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        background: url(loginbg.png) no-repeat;
+        background-size: cover;
+      }
+
+      /* Gaya untuk kartu login */
+      .card {
+        background: rgba(0, 0, 0, 0.4) !important; /* Transparansi tinggi */
+        backdrop-filter: blur(2px); /* Efek frosted glass */
+        border-radius: 2rem; /* Sudut membulat */
+        border: none; /* Menghapus border default */
+        color: white; /* Warna teks putih untuk kontras */
+        max-width: 400px; /* Lebar maksimum kartu */
+        margin: auto; /* Memusatkan kartu secara horizontal */
+      }
+
+      /* Gaya untuk teks di dalam kartu login */
+      .card-body h2,
+      .card-body p {
+        text-shadow: 1px 1px 2px rgba(253, 253, 253, 0.7);
+      }
+
+      /* Gaya untuk tombol login */
+      .btn-outline-light {
+        border-color: rgba(255, 255, 255, 0.6);
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .btn-outline-light:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+        transform: scale(1.05); /* Memperbesar tombol sedikit saat hover */
+      }
+
+      /* Gaya untuk ikon media sosial */
+      .social-icon {
+        transition: color 0.3s, transform 0.3s;
+      }
+
+      .social-icon:hover {
+        color: rgba(255, 255, 255, 0.8);
+        transform: scale(1.2); /* Memperbesar ikon sedikit saat hover */
+      }
+    </style>
+    <!-- Menyertakan Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Menyertakan Font Awesome untuk ikon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Video latar belakang yang diputar otomatis dan diulang -->
+    <video autoplay muted loop class="bg-video">
+      <source src="genshin.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Bagian login dengan tinggi 100% viewport -->
+    <section class="vh-100 gradient-custom">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <!-- Kartu login dengan sudut membulat dan tanpa border -->
+            <div class="card" style="border-radius: 1rem; border: none">
+              <div class="card-body p-5 text-center">
+                <div class="mb-md-5 mt-md-4 pb-5">
+                  <!-- Judul login -->
+                  <h2 class="fw-bold mb-2 text-uppercase text-white">Login</h2>
+                  <p class="text-white-50 mb-5">
+                    Please enter your login and password!
+                  </p>
+
+                  <!-- Input email -->
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input
+                      type="email"
+                      id="typeEmailX"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label text-white-50" for="typeEmailX"
+                      >Email</label
+                    >
+                  </div>
+
+                  <!-- Input password -->
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input
+                      type="password"
+                      id="typePasswordX"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label text-white-50" for="typePasswordX"
+                      >Password</label
+                    >
+                  </div>
+
+                  <!-- Link "Forgot password?" -->
+                  <p class="small mb-5 pb-lg-2">
+                    <a class="text-white-50" href="#!">Forgot password?</a>
+                  </p>
+
+                  <!-- Tombol login dengan link ke halaman utama -->
+                  <a href="index.html">
+                    <button
+                      data-mdb-button-init
+                      data-mdb-ripple-init
+                      class="btn btn-outline-light btn-lg px-5"
+                      type="submit"
+                    >
+                      Login
+                    </button>
+                  </a>
+
+                  <!-- Ikon media sosial -->
+                  <div
+                    class="d-flex justify-content-center text-center mt-4 pt-1"
+                  >
+                    <a href="#!" class="text-white social-icon"
+                      ><i class="fab fa-facebook-f fa-lg"></i
+                    ></a>
+                    <a href="#!" class="text-white social-icon"
+                      ><i class="fab fa-twitter fa-lg mx-4 px-2"></i
+                    ></a>
+                    <a href="#!" class="text-white social-icon"
+                      ><i class="fab fa-google fa-lg"></i
+                    ></a>
+                  </div>
+                </div>
+
+                <!-- Link untuk mendaftar jika belum punya akun -->
+                <div>
+                  <p class="mb-0 text-white-50">
+                    Don't have an account?
+                    <a href="signup.html" class="text-white fw-bold">Sign Up</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

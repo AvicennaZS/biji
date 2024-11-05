@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SignUp</title>
+    <!-- CSS untuk mengatur latar belakang halaman -->
+    <style>
+      /* Menetapkan gaya untuk video latar belakang */
+      .bg-video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1; /* Menempatkan video di belakang konten */
+        transform: translate(-50%, -50%);
+        background: url(loginbg.png) no-repeat; /* Gambar cadangan jika video tidak tersedia */
+        background-size: cover;
+      }
+
+      /* Gaya untuk kartu signup */
+      .card {
+        background: rgba(0, 0, 0, 0.4) !important; /* Transparansi tinggi */
+        backdrop-filter: blur(2px); /* Efek frosted glass */
+        border-radius: 2rem; /* Sudut membulat */
+        border: none; /* Menghapus border default */
+        color: white; /* Warna teks putih untuk kontras */
+        max-width: 400px; /* Lebar maksimum kartu */
+        margin: auto; /* Memusatkan kartu secara horizontal */
+      }
+
+      /* Gaya untuk teks di dalam kartu signup */
+      .card-body h2,
+      .card-body p {
+        text-shadow: 1px 1px 2px rgba(253, 253, 253, 0.7); /* Bayangan teks untuk keterbacaan */
+      }
+
+      /* Gaya untuk tombol */
+      .btn-outline-light {
+        border-color: rgba(255, 255, 255, 0.6); /* Warna border tombol */
+        transition: transform 0.3s, background-color 0.3s; /* Transisi untuk efek hover */
+      }
+
+      .btn-outline-light:hover {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.6
+        ); /* Efek hover untuk tombol */
+        transform: scale(1.05); /* Perbesar tombol saat hover */
+      }
+
+      /* Gaya untuk ikon media sosial */
+      .social-icon {
+        transition: transform 0.3s, color 0.3s; /* Transisi untuk efek hover */
+      }
+
+      .social-icon:hover {
+        transform: scale(1.2); /* Perbesar ikon saat hover */
+        color: #007bff; /* Ubah warna pada hover (dapat disesuaikan) */
+      }
+    </style>
+
+    <!-- Link ke Bootstrap 5.3.3, pustaka CSS untuk layout dan gaya responsif -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Link ke Font Awesome, pustaka ikon untuk web -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Menyisipkan video latar belakang -->
+    <video autoplay muted loop class="bg-video">
+      <source src="genshin.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Bagian utama halaman signup -->
+    <section class="vh-100 gradient-custom">
+      <div class="container py-5 h-100">
+        <!-- Baris tengah untuk konten signup -->
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <!-- Kolom untuk menampung form signup, responsif di berbagai perangkat -->
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <!-- Kartu dengan latar belakang gelap dan teks putih -->
+            <div class="card">
+              <!-- Isi kartu, dengan teks yang dipusatkan secara horizontal -->
+              <div class="card-body p-5 text-center">
+                <!-- Konten utama bagian signup -->
+                <div class="mb-md-5 mt-md-4 pb-5">
+                  <!-- Judul signup -->
+                  <h2 class="fw-bold mb-2 text-uppercase text-white">
+                    Sign up
+                  </h2>
+                  <!-- Deskripsi singkat atau instruksi -->
+                  <p class="text-white-50 mb-5">
+                    Please fill in your details to create an account!
+                  </p>
+
+                  <!-- Layout dua kolom untuk input nama depan dan belakang -->
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline form-white">
+                        <input
+                          type="text"
+                          id="form3Example1"
+                          class="form-control form-control-lg"
+                        />
+                        <label
+                          class="form-label text-white-50"
+                          for="form3Example1"
+                          >First name</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline form-white">
+                        <input
+                          type="text"
+                          id="form3Example2"
+                          class="form-control form-control-lg"
+                        />
+                        <label
+                          class="form-label text-white-50"
+                          for="form3Example2"
+                          >Last name</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Input email -->
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input
+                      type="email"
+                      id="form3Example3"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label text-white-50" for="form3Example3"
+                      >Email address</label
+                    >
+                  </div>
+
+                  <!-- Input password -->
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input
+                      type="password"
+                      id="form3Example4"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label text-white-50" for="form3Example4"
+                      >Password</label
+                    >
+                  </div>
+
+                  <!-- Checkbox untuk berlangganan newsletter -->
+                  <div class="form-check d-flex justify-content-center mb-4">
+                    <input
+                      class="form-check-input me-2"
+                      type="checkbox"
+                      value=""
+                      id="form2Example33"
+                      checked
+                    />
+                    <label
+                      class="form-check-label text-white-50"
+                      for="form2Example33"
+                      >Subscribe to our newsletter</label
+                    >
+                  </div>
+
+                  <!-- Tombol submit untuk signup, link ke halaman login -->
+                  <a href="login.html">
+                    <button
+                      type="submit"
+                      data-mdb-button-init
+                      data-mdb-ripple-init
+                      class="btn btn-outline-light btn-lg px-5 mb-4"
+                    >
+                      Sign up
+                    </button>
+                  </a>
+
+                  <!-- Tombol daftar menggunakan media sosial -->
+                  <div
+                    class="d-flex justify-content-center text-center mt-4 pt-1"
+                  >
+                    <p class="text-white">or sign up with:</p>
+                    <a href="#!" class="text-white mx-1 social-icon"
+                      ><i class="fab fa-facebook-f fa-lg"></i
+                    ></a>
+                    <a href="#!" class="text-white mx-1 social-icon"
+                      ><i class="fab fa-google fa-lg"></i
+                    ></a>
+                    <a href="#!" class="text-white mx-1 social-icon"
+                      ><i class="fab fa-twitter fa-lg"></i
+                    ></a>
+                  </div>
+                </div>
+
+                <!-- Teks untuk mengarahkan ke halaman login jika sudah memiliki akun -->
+                <div>
+                  <p class="mb-0 text-white-50">
+                    Already have an account?
+                    <a href="login.html" class="text-white fw-bold">Log In</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Mendefinisikan karakter encoding dan viewport untuk memastikan halaman ditampilkan dengan benar di semua perangkat -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MYMUS</title>
+    <style>
+      /* Mengatur gaya CSS untuk elemen halaman */
+      body {
+        background-image: url(bg.png);
+        /* Mengatur gambar latar belakang */
+        background-size: cover;
+        /* Latar belakang memenuhi halaman */
+        background-attachment: fixed;
+        /* Latar tetap saat di-scroll */
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      header,
+      main,
+      footer {
+        color: #ffffff;
+        /* Teks putih pada header, main, dan footer */
+      }
+
+      .navbar-light .navbar-nav .nav-link {
+        color: #ffffff;
+      }
+      .nav-link {
+        transition: color 0.3s ease, transform 0.3s ease;
+        /* Transisi untuk perubahan warna dan transformasi */
+      }
+
+      .nav-link:hover {
+        color: #007bff;
+        /* Warna link berubah saat hover */
+        transform: scale(1.1);
+        /* Perbesar sedikit saat hover */
+      }
+
+      .bg-dark-blue-transparent {
+        background-color: rgba(14, 30, 47, 0.8);
+        /* Navbar transparan */
+      }
+
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        /* Mengatur posisi brand agar rata */
+      }
+
+      #MUS-LOGO {
+        margin-right: 10px;
+        /* Jarak antara logo dan teks */
+      }
+
+      .brand-text {
+        font-size: 24px;
+        font-weight: bold;
+        color: #a2a502;
+        /* Teks logo berwarna dan lebih besar */
+      }
+
+      .card-body {
+        padding: 24px;
+        /* Padding di dalam kartu */
+      }
+
+      .card {
+        background-color: rgba(255, 255, 255, 0.5);
+        /* Latar belakang kartu semi-transparan */
+        border: none;
+        /* Menghilangkan border */
+      }
+
+      .card-img-top {
+        opacity: 0.8;
+        /* Transparansi gambar dalam kartu */
+      }
+
+      #intro-example {
+        height: 400px;
+        /* Tinggi default pada perangkat kecil */
+      }
+
+      @media (min-width: 992px) {
+        #intro-example {
+          height: 600px;
+          /* Tinggi untuk perangkat dengan lebar lebih besar dari 992px */
+        }
+      }
+
+      nav {
+        position: relative;
+        top: 0;
+      }
+      footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      header {
+        position: relative;
+        top: 20px;
+      }
+
+      .btn-outline-light {
+        transition: all 0.3s ease;
+        /* Efek transisi pada tombol */
+      }
+
+      .btn-outline-light:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: scale(1.05);
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+        /* Animasi dan bayangan tombol saat hover */
+      }
+    </style>
+    <!-- Link ke Bootstrap CSS dan Font Awesome untuk ikon -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar (bar navigasi di bagian atas) -->
+    <nav class="navbar navbar-expand-lg bg-dark-blue-transparent navbar-dark">
+      <!-- Navbar dengan warna transparan -->
+
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <!-- Logo dan teks brand pada navbar -->
+
+          <img
+            id="MUS-LOGO"
+            src="logo.png"
+            alt="MYMUS Logo"
+            height="50"
+            draggable="false"
+          />
+          <span class="brand-text">MYMUS</span>
+          <!-- Nama brand MYMUS -->
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <!-- Tombol untuk meng-expand navbar pada perangkat kecil -->
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#!">
+                <i class="fas fa-plus-circle pe-2"></i>List Song
+                <!-- Link ke daftar lagu dengan ikon -->
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <form class="d-flex">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+                <!-- Form pencarian dengan input dan tombol -->
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header style="height: 100vh margin-bottom 0">
+      <div class="mask">
+        <div class="d-flex justify-content-center align-items-right h-100">
+          <div
+            class="text-white text-center"
+            style="
+              margin: 20px;
+              text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+              background-color: rgba(0, 0, 0, 0.5);
+              padding: 10px;
+              border-radius: 5px;
+            "
+          >
+            <h1 class="mb-3">MYMUS</h1>
+            <h5
+              class="mb-4"
+              style="
+                text-align: justify;
+                line-height: 1, 5;
+                text-indent: 30px;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+              "
+            >
+              Selamat datang di MYMUS, platform terbaik untuk para penggemar
+              musik anime! MYMUS menyediakan koleksi lagu anime yang lengkap dan
+              terus diperbarui, memungkinkan pengguna untuk menikmati soundtrack
+              favorit dari berbagai seri anime, film, dan game. Dengan antarmuka
+              yang user-friendly, kamu dapat dengan mudah mencari, memutar, dan
+              menambahkan lagu-lagu ke daftar putar pribadi.
+              <!-- Teks deskripsi di header -->
+            </h5>
+
+            <a
+              data-mdb-ripple-init
+              class="btn btn-outline-light btn-lg m-2"
+              href="login.html"
+              role="button"
+              rel="nofollow"
+              target="_blank"
+              >Login</a
+            >
+            <a
+              data-mdb-ripple-init
+              class="btn btn-outline-light btn-lg m-2"
+              href="signup.html"
+              target="_blank"
+              role="button"
+              >Sign Up</a
+            >
+            <!-- Tombol Login dan Sign Up -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="py-3 text-center container">
+        <div class="row py-lg-2">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1
+              class="mb03"
+              style="
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 10px;
+                border-radius: 5px;
+              "
+            >
+              Musik Populer
+              <!-- Judul bagian Musik Populer -->
+            </h1>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark-blue-transparent text-center" id="footer">
+      <div class="container p-4 pb-0">
+        <section class="mb-4">
+          <!-- Tautan media sosial -->
+          <a
+            data-mdb-ripple-init
+            class="btn text-white btn-floating m-1"
+            style="background-color: #3b5998"
+            href="#!"
+            role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <!-- Tautan Facebook -->
+
+          <a
+            data-mdb-ripple-init
+            class="btn text-white btn-floating m-1"
+            style="background-color: #55acee"
+            href="#!"
+            role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <!-- Tautan Twitter -->
+
+          <a
+            data-mdb-ripple-init
+            class="btn text-white btn-floating m-1"
+            style="background-color: #dd4b39"
+            href="#!"
+            role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+          <!-- Tautan Google -->
+
+          <a
+            data-mdb-ripple-init
+            class="btn text-white btn-floating m-1"
+            style="background-color: #ac2bac"
+            href="#!"
+            role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <!-- Tautan Instagram -->
+
+          <a
+            data-mdb-ripple-init
+            class="btn text-white btn-floating m-1"
+            style="background-color: #0082ca"
+            href="#!"
+            role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <!-- Tautan LinkedIn -->
+
+          <a
+            data-mdb-ripple-init
+            class="btn text-white btn-floating m-1"
+            style="background-color: #333333"
+            href="#!"
+            role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+          <!-- Tautan GitHub -->
+        </section>
+      </div>
+
+      <div
+        class="text-center p-3"
+        style="background-color: rgba(0, 0, 0, 0.05); color: white"
+      >
+        © 2024 Copyright:
+        <a href="#" style="color: white">MYMUS</a>
+        <!-- Hak cipta dengan nama MYMUS -->
+      </div>
+    </footer>
+  </body>
+</html>
